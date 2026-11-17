@@ -1,0 +1,8 @@
+# Redis only. Neo4j runs from Neo4j Desktop (not in Docker), so there is no port clash.
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: placement-redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
